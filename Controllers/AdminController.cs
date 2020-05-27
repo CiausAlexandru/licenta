@@ -6,6 +6,7 @@ using identity.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace identity.Controllers
 {
@@ -27,7 +28,7 @@ namespace identity.Controllers
 
         public IActionResult Index()
         {
-            return View(userManager.Users);
+            return View(userManager.Users.Include(x => x.Region));
         }
 
         public ViewResult Create() => View();
