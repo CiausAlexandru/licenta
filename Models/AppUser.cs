@@ -8,7 +8,7 @@ namespace identity.Models
 {
     public class AppUser : IdentityUser
     {
-        public long RegionId { get; set; }
+        public long? RegionId { get; set; }
 
         public Region Region { get; set; }
     }

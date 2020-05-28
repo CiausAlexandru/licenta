@@ -11,7 +11,7 @@ namespace identity.Models
 
         public string Name { get; set; }
 
-        public Guid AppUserId { get; set; }
+        public Guid? AppUserId { get; set; }
 
         public AppUser AppUser { get; set; }
 

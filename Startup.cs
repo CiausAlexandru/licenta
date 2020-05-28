@@ -39,6 +39,8 @@ namespace identity
                 opts.Password.RequireDigit = true;
             }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
             services.AddMvc();
+            services.ConfigureApplicationCookie(opts => opts.LoginPath = "/Account/Login");
+
 
         }
 
@@ -46,6 +48,7 @@ namespace identity
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseRouting();
+            app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
@@ -54,6 +57,7 @@ namespace identity
             app.UseDeveloperExceptionPage();
             app.UseStaticFiles();
             app.UseAuthentication();
+            
             
         }
     }

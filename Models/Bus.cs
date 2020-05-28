@@ -11,7 +11,7 @@ namespace identity.Models
 
         public string LicencePlate { get; set; }
 
-        public long RegionId { get; set; }
+        public long? RegionId { get; set; }
 
         public Region Region { get; set; }
 
